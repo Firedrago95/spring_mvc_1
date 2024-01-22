@@ -1,5 +1,7 @@
 package hello.servlet.domain.member;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,13 +15,10 @@ public class MemberRepository {
     private static Map<Long, Member> store = new HashMap<>();
     private static Long sequence = 0l; // static 사용
 
+    @Getter
     private static final MemberRepository instance = new MemberRepository();
 
     private MemberRepository() {
-    }
-
-    public static MemberRepository getInstance() {
-        return instance;
     }
 
     public Member save(Member member) {
