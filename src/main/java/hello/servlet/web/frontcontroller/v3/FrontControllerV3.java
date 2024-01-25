@@ -37,7 +37,7 @@ public class FrontControllerV3 extends HttpServlet {
         }
 
         Map<String, String> paramMap = createParamMap(request);
-        ModelView mv = controller.proceed(paramMap);
+        ModelView mv = controller.process(paramMap);
 
         String viewName = mv.getViewName();
         MyView myView = viewResolver(viewName);
